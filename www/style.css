@@ -1,0 +1,129 @@
+body{
+    background-color: black;
+    /* hide overflow in x and y */
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;              /* Add this */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    height: 100vh;
+}
+
+
+.square{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:radial-gradient(circle, red 0%, #1a1a1a 60%, black 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 
+            0 0 40px rgba(255, 0, 0, 0.4), 
+            0 0 60px rgba(255, 255, 255, 0.2);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: morphGlow1 6s linear infinite;
+}
+
+.square span:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:radial-gradient(circle, red 0%, #1a1a1a 60%, black 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 
+            0 0 40px rgba(255, 0, 0, 0.4), 
+            0 0 60px rgba(255, 255, 255, 0.2);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: morphGlow2 4s linear infinite;
+}
+
+
+.square span:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:radial-gradient(circle, red 0%, #1a1a1a 60%, black 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 
+            0 0 40px rgba(255, 0, 0, 0.4), 
+            0 0 60px rgba(255, 255, 255, 0.2);
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: morphGlow3 8s linear infinite;
+}
+
+
+/* 🔴 Layer 1 – Pulsating Morph with Glow */
+@keyframes morphGlow1 {
+  0% {
+    border-radius: 40% 60% 65% 35% / 45% 50% 55% 50%;
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    border-radius: 65% 35% 40% 60% / 55% 45% 50% 60%;
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 0 60px rgba(255, 80, 80, 1), 0 0 140px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    border-radius: 40% 60% 65% 35% / 45% 50% 55% 50%;
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 80px rgba(255, 0, 0, 0.4);
+  }
+}
+
+/* ⚪ Layer 2 – Rotating Ripple */
+@keyframes morphGlow2 {
+  0% {
+    border-radius: 50% 50% 45% 55% / 55% 50% 50% 45%;
+    transform: rotate(0deg) scale(1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 200, 200, 0.3);
+  }
+  50% {
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    transform: rotate(8deg) scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.9), 0 0 120px rgba(255, 100, 100, 0.6);
+  }
+  100% {
+    border-radius: 50% 50% 45% 55% / 55% 50% 50% 45%;
+    transform: rotate(0deg) scale(1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 200, 200, 0.3);
+  }
+}
+
+/* 🟣 Layer 3 – Deep Pulse + Twist */
+@keyframes morphGlow3 {
+  0% {
+    border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%;
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 70px rgba(255, 0, 150, 0.3);
+  }
+  25% {
+    border-radius: 70% 30% 40% 60% / 50% 65% 35% 50%;
+    transform: scale(1.1) rotate(-6deg);
+    box-shadow: 0 0 70px rgba(255, 0, 255, 0.9), 0 0 150px rgba(255, 0, 150, 0.7);
+  }
+  75% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    transform: scale(0.95) rotate(6deg);
+    box-shadow: 0 0 40px rgba(200, 0, 255, 0.7), 0 0 100px rgba(150, 0, 200, 0.5);
+  }
+  100% {
+    border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%;
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 70px rgba(255, 0, 150, 0.3);
+  }
+}
+
+
+
